@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
 
 /**
  * The World our hero lives in.
@@ -55,6 +56,17 @@ public class MyWorld extends World
         }
     }
     
+    public void decreaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        
+        if(score % 5 == 0)
+        {
+            level -= 1;
+        }
+    }
+    
     /**
      * Create a new apple at random location at top of screen
      */
@@ -73,5 +85,14 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(pear, x, y);
+        createBomb();
+    }
+    
+    public void createBomb()
+    {
+        bomb bommb = new bomb();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(bommb, x, y);
     }
 }

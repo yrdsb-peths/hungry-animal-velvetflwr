@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class goldenpear here.
+ * Write a description of class bomb here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class goldenpear extends Actor
+public class bomb extends Actor
 {
-    int speed = 3;
+    int speed = 5;
     public void act()
     {
         int x = getX();
@@ -16,10 +16,5 @@ public class goldenpear extends Actor
         setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
-        if(getY()>=world.getHeight())
-        {
-            world.createApple();
-            world.removeObject(this);
-        }
     }
 }

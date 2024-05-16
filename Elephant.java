@@ -10,6 +10,8 @@ import java.util.Random;
 public class Elephant extends Actor
 {
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
+    GreenfootSound arianaSound = new GreenfootSound("yuh.mp3");
+    GreenfootSound sorrySound = new GreenfootSound("sorry.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
@@ -116,7 +118,7 @@ public class Elephant extends Actor
             removeTouching(goldenpear.class);
             MyWorld world = (MyWorld) getWorld();
             Random random = new Random();
-            if(random.nextInt(3)==2)
+            if(random.nextInt(4)==2)
             {
                 world.createPear();
             }
@@ -127,7 +129,20 @@ public class Elephant extends Actor
             world.increaseScore();
             world.increaseScore();
             world.increaseScore();
-            elephantSound.play();
+            arianaSound.play();
+        }
+    }
+    
+    public void getBomb()
+    {
+        if(isTouching(bomb.class))
+        {
+            removeTouching(bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseScore();
+            world.decreaseScore();
+            world.decreaseScore();
+            sorrySound.play();
         }
     }
 }
