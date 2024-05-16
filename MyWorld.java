@@ -58,12 +58,11 @@ public class MyWorld extends World
     
     public void decreaseScore()
     {
-        score++;
+        score--;
         scoreLabel.setValue(score);
-        
-        if(score % 5 == 0)
+        if(score<0)
         {
-            level -= 1;
+            score=0;
         }
     }
     
