@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
 
 /**
  * The Elephant, our hero.
@@ -78,6 +79,7 @@ public class Elephant extends Actor
         
         //Remove apple if elephant eats it
         eat();
+        eatPear();
         
         //Animate the elephant
         animateElephant();
@@ -92,7 +94,38 @@ public class Elephant extends Actor
         {
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
-            world.createApple();
+            
+            Random rand = new Random();
+            if(rand.nextInt(3)==2)
+            {
+                world.createPear();
+            }
+            else
+            {
+                world.createApple();
+            }
+            world.increaseScore();
+            elephantSound.play();
+        }
+    }
+    
+    public void eatPear()
+    {
+        if(isTouching(goldenpear.class))
+        {
+            removeTouching(goldenpear.class);
+            MyWorld world = (MyWorld) getWorld();
+            Random random = new Random();
+            if(random.nextInt(3)==2)
+            {
+                world.createPear();
+            }
+            else
+            {
+                world.createApple();
+            }
+            world.increaseScore();
+            world.increaseScore();
             world.increaseScore();
             elephantSound.play();
         }

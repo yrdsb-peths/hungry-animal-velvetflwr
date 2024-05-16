@@ -29,6 +29,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         createApple();
+        //createPear();
     }
     
     /**
@@ -64,5 +65,13 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
+    }
+    
+    public void createPear()
+    {
+        goldenpear pear = new goldenpear();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(pear, x, y);
     }
 }
