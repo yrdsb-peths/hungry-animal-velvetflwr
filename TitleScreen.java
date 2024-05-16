@@ -45,8 +45,8 @@ public class TitleScreen extends World
         addObject(elephant,442,123);
         elephant.setLocation(306,284);
         Label subLabel = new Label("Press space to begin!", 40);
-        addObject(subLabel, getWidth()/2, 175);
+        addObject(subLabel, getWidth()/2, 160);
         Label instruct = new Label("Use \u2190 and \u2192 to move!", 30);
-        addObject(subLabel, getWidth()/2, 185);
+        addObject(instruct, getWidth()/2, 210);
     }
 }
