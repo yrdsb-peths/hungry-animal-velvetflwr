@@ -119,7 +119,7 @@ public class Elephant extends Actor
             removeTouching(goldenpear.class);
             MyWorld world = (MyWorld) getWorld();
             Random random = new Random();
-            if(random.nextInt(4)==2)
+            if(random.nextInt(5)==2)
             {
                 world.createPear();
             }
